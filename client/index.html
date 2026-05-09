@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnyDesk Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="setup-container">
+    <div class="card">
+      <h1>Your Workspace</h1>
+      <p>Your ID: <strong id="my-id">Connecting...</strong></p>
+      
+      <hr>
+      
+      <h2>Connect to a Remote Desktop</h2>
+      <div class="input-group">
+        <input type="text" id="target-id" placeholder="Enter remote ID">
+        <button id="connect-btn">Connect</button>
+      </div>
+      <p id="status-msg"></p>
+      <button id="stop-sharing-btn" class="hidden" style="background-color: #e74c3c; color: white; width: 100%; margin-top: 10px; border-radius: 5px; padding: 10px; border: none; cursor: pointer; font-size: 16px;">Stop Sharing</button>
+    </div>
+  </div>
+
+  <div id="remote-container" class="hidden">
+    <div class="toolbar">
+      <span id="remote-status">Connected to: <span id="connected-id"></span></span>
+      <button id="disconnect-btn">Disconnect</button>
+    </div>
+    <video id="remote-video" autoplay playsinline></video>
+  </div>
+
+  <div id="incoming-modal" class="hidden">
+    <div class="card">
+      <h2>Incoming Connection</h2>
+      <p><strong id="caller-id-span"></strong> wants to connect.</p>
+      <div class="input-group" style="margin-top: 20px; gap: 10px;">
+        <button id="accept-btn" style="background-color: #2ecc71; border-radius: 5px;">Accept</button>
+        <button id="reject-btn" style="background-color: #e74c3c; border-radius: 5px;">Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
