@@ -123,3 +123,47 @@ video {
   align-items: center;
   z-index: 1000;
 }
+
+.titlebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  -webkit-app-region: drag;
+  z-index: 9999;
+}
+
+.title-text {
+  flex: 1;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.window-controls {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.window-controls button {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.window-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#app-close-btn:hover {
+  background-color: #e74c3c;
+}

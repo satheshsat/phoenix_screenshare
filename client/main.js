@@ -8,6 +8,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 700,
+    frame: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -87,15 +88,33 @@ function getNutKey(keyString) {
     'Alt': Key.LeftAlt,
     'Meta': Key.LeftSuper,
   };
-  
+
   if (keyMap[keyString]) return keyMap[keyString];
-  
+
   if (keyString.length === 1) {
     // Basic mapping for alphanumeric keys
     try {
       const upper = keyString.toUpperCase();
       if (Key[upper]) return Key[upper];
-    } catch(e) {}
+    } catch (e) { }
   }
   return null;
 }
+
+ipcMain.on('window-minimize', () => {
+  if (mainWindow) mainWindow.minimize();
+});
+
+ipcMain.on('window-maximize', () => {
+  if (mainWindow) {
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  }
+});
+
+ipcMain.on('window-close', () => {
+  if (mainWindow) mainWindow.close();
+});

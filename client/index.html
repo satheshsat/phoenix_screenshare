@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnyDesk Clone</title>
+  <title>Screen Share</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="titlebar">
+    <div class="title-text">Screen Share</div>
+    <div class="window-controls">
+      <button id="app-minimize-btn">&#8211;</button>
+      <button id="app-maximize-btn">&#9633;</button>
+      <button id="app-close-btn">&#10005;</button>
+    </div>
+  </div>
   <div id="setup-container">
     <div class="card">
       <h1>Your Workspace</h1>
       <p>Your ID: <strong id="my-id">Connecting...</strong></p>
-      
+
       <hr>
-      
+
       <h2>Connect to a Remote Desktop</h2>
       <div class="input-group">
         <input type="text" id="target-id" placeholder="Enter remote ID">
         <button id="connect-btn">Connect</button>
       </div>
       <p id="status-msg"></p>
-      <button id="stop-sharing-btn" class="hidden" style="background-color: #e74c3c; color: white; width: 100%; margin-top: 10px; border-radius: 5px; padding: 10px; border: none; cursor: pointer; font-size: 16px;">Stop Sharing</button>
+      <button id="stop-sharing-btn" class="hidden"
+        style="background-color: #e74c3c; color: white; width: 100%; margin-top: 10px; border-radius: 5px; padding: 10px; border: none; cursor: pointer; font-size: 16px;">Stop
+        Sharing</button>
     </div>
   </div>
 
@@ -46,4 +58,5 @@
   <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
   <script src="renderer.js"></script>
 </body>
+
 </html>

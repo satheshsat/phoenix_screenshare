@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:3000'; // Change if running on a different machine
+const serverUrl = 'http://screenshare.kssvnr.com:80'; // Change if running on a different machine
 const socket = io(serverUrl);
 
 let myId = null;
@@ -23,6 +23,9 @@ const remoteContainer = document.getElementById('remote-container');
 const remoteVideo = document.getElementById('remote-video');
 const disconnectBtn = document.getElementById('disconnect-btn');
 const connectedIdEl = document.getElementById('connected-id');
+const appMinimizeBtn = document.getElementById('app-minimize-btn');
+const appMaximizeBtn = document.getElementById('app-maximize-btn');
+const appCloseBtn = document.getElementById('app-close-btn');
 
 // Modal Elements
 const incomingModal = document.getElementById('incoming-modal');
@@ -263,6 +266,25 @@ stopSharingBtn.addEventListener('click', () => {
   statusMsg.textContent = 'Screen sharing stopped.';
   stopSharingBtn.classList.add('hidden');
 });
+
+// Titlebar Controls
+if (appMinimizeBtn) {
+  appMinimizeBtn.addEventListener('click', () => {
+    window.electronAPI.minimizeWindow();
+  });
+}
+
+if (appMaximizeBtn) {
+  appMaximizeBtn.addEventListener('click', () => {
+    window.electronAPI.maximizeWindow();
+  });
+}
+
+if (appCloseBtn) {
+  appCloseBtn.addEventListener('click', () => {
+    window.electronAPI.closeWindow();
+  });
+}
 
 // Input Capture (Controller Side)
 function setupInputCapture() {
