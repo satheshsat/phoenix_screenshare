@@ -16,7 +16,8 @@
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
-    "electron": "^42.0.1"
+    "electron": "^42.0.1",
+    "electron-builder": "^24.13.3"
   },
   "build": {
     "appId": "com.sat.screenshare",

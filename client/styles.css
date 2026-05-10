@@ -167,3 +167,20 @@ video {
 #app-close-btn:hover {
   background-color: #e74c3c;
 }
+
+.donation-section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc;
+  font-size: 14px;
+  color: #555;
+}
+
+.donation-section p {
+  margin: 5px 0;
+}
+
+.donate-number {
+  color: #27ae60;
+  font-size: 16px;
+}
