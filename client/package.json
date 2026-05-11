@@ -23,16 +23,19 @@
     "appId": "com.sat.screenshare",
     "productName": "screenshare",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icon.png"
     },
     "mac": {
-      "category": "public.screenshare.utilities"
+      "target": "dmg",
+      "icon": "icon.png"
     },
     "linux": {
       "target": [
         "AppImage",
         "deb"
-      ]
+      ],
+      "icon": "icon.png"
     }
   }
 }
