@@ -9,6 +9,7 @@
     "build": "electron-builder"
   },
   "keywords": [
+    "phoenix",
     "screenshare",
     "webrtc",
     "remote-desktop"
@@ -25,8 +26,8 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.sat.screenshare",
-    "productName": "screenshare",
+    "appId": "satcs.phoenix.screenshare",
+    "productName": "Phoenix Screen Share",
     "win": {
       "target": "nsis",
       "icon": "icon.png"
