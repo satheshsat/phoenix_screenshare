@@ -1,4 +1,4 @@
-const serverUrl = 'https://screenshare-uyuj.onrender.com:80'; // Change if running on a different machine
+const serverUrl = 'https://screenshare-uyuj.onrender.com:443'; // Change if running on a different machine
 const socket = io(serverUrl);
 
 let myId = null;
